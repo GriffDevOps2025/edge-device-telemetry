@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  edge:
+    build:
+      context: ./edge
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    container_name: edge-telemetry-service
+    restart: unless-stopped
+    environment:
+      - PYTHONUNBUFFERED=1
